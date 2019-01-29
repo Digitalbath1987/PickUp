@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BD_pickupModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PickUp">
+          <Key>
+            <PropertyRef Name="ID_PickUp" />
+          </Key>
+          <Property Name="ID_PickUp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Correlativo_PickUp" Type="int" />
+          <Property Name="Nombre_Cliente" Type="varchar" MaxLength="500" />
+          <Property Name="Direccion" Type="varchar" MaxLength="500" />
+          <Property Name="Contacto" Type="varchar" MaxLength="15" />
+          <Property Name="Hora_Pu_Ini" Type="int" />
+          <Property Name="Hora_Peu_Fin" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Conductor_Asignado" Type="varchar" MaxLength="100" />
+          <Property Name="Comentario_PickUp" Type="varchar(max)" />
+          <Property Name="Fecha_Registro" Type="smalldatetime" />
+          <Property Name="Fecha_Finalizacion" Type="smalldatetime" />
+          <Property Name="Estado_Correlativo" Type="int" />
+          <Property Name="User_Correlativo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="BD_pickupModelStoreContainer">
+          <EntitySet Name="PickUp" EntityType="Self.PickUp" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_pickupModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PickUp">
+          <Key>
+            <PropertyRef Name="ID_PickUp" />
+          </Key>
+          <Property Name="ID_PickUp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Correlativo_PickUp" Type="Int32" />
+          <Property Name="Nombre_Cliente" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Contacto" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Hora_Pu_Ini" Type="Int32" />
+          <Property Name="Hora_Peu_Fin" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Conductor_Asignado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Comentario_PickUp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Registro" Type="DateTime" Precision="0" />
+          <Property Name="Fecha_Finalizacion" Type="DateTime" Precision="0" />
+          <Property Name="Estado_Correlativo" Type="Int32" />
+          <Property Name="User_Correlativo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BD_pickupEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PickUps" EntityType="Self.PickUp" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_pickupModelStoreContainer" CdmEntityContainer="BD_pickupEntities">
+          <EntitySetMapping Name="PickUps">
+            <EntityTypeMapping TypeName="BD_pickupModel.PickUp">
+              <MappingFragment StoreEntitySet="PickUp">
+                <ScalarProperty Name="ID_PickUp" ColumnName="ID_PickUp" />
+                <ScalarProperty Name="Correlativo_PickUp" ColumnName="Correlativo_PickUp" />
+                <ScalarProperty Name="Nombre_Cliente" ColumnName="Nombre_Cliente" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="Hora_Pu_Ini" ColumnName="Hora_Pu_Ini" />
+                <ScalarProperty Name="Hora_Peu_Fin" ColumnName="Hora_Peu_Fin" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Conductor_Asignado" ColumnName="Conductor_Asignado" />
+                <ScalarProperty Name="Comentario_PickUp" ColumnName="Comentario_PickUp" />
+                <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha_Registro" />
+                <ScalarProperty Name="Fecha_Finalizacion" ColumnName="Fecha_Finalizacion" />
+                <ScalarProperty Name="Estado_Correlativo" ColumnName="Estado_Correlativo" />
+                <ScalarProperty Name="User_Correlativo" ColumnName="User_Correlativo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
